@@ -18,7 +18,7 @@ This repository contains my daily Data Structures and Algorithms practice for pl
 
 ## 🛠 Languages Used
 
-- C++
+- python
 
 ## 📂 Topics Covered
 
