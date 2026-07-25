@@ -1,0 +1,13 @@
+class Solution:
+    def maxProduct(self, n: int) -> int:
+        ans =[]
+        x = n
+        mul =1
+        while(x):
+            last = x%10
+            ans.append(last)
+            x = x//10
+        ans.sort()
+        mul = ans[-1]*ans[-2]
+        return mul
+        
