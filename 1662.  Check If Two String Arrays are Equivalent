@@ -1,0 +1,11 @@
+class Solution:
+    def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:
+        k1=""
+        k2=""
+        for w1 in word1:
+            for s in w1:
+                k1 += str("".join(s))
+        for w2 in word2:
+            for s in w2:
+                k2 += str("".join(s))
+        return k1 == k2
