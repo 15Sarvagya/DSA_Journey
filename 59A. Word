@@ -1,0 +1,13 @@
+s = input()
+lcount =0
+ucount=0
+for i in range(len(s)):
+    if s[i].islower():
+        lcount+=1
+    else:
+        ucount+=1
+if lcount>ucount or lcount==ucount:
+    print(s.lower())
+else:
+    print(s.upper())
+
