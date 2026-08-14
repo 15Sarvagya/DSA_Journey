@@ -1,0 +1,22 @@
+n = int(input())
+
+def is_square(total):
+    low =1
+    high = total
+    while(low<=high):
+        mid=(low+high)//2
+        if mid*mid==total:
+            return True
+        elif mid*mid<total:
+            low=mid+1
+        else:
+            high=mid-1
+    return False
+for i in range(n):
+    x = int(input())
+    a = list(map(int,input().split()))
+    total = sum(a)
+    if is_square(total):
+        print("YES")
+    else:
+        print("NO")
