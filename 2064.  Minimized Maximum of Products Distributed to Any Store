@@ -1,0 +1,15 @@
+class Solution:
+    def minimizedMaximum(self, n: int, quantities: List[int]) -> int:
+        low=1
+        high=max(quantities)     
+        while(low<=high):
+          mid=(low+high)//2
+          stores=0
+          for q in quantities:
+            stores+=(q+mid-1)//mid
+          if stores>n:
+            low=mid+1
+          else:
+            high=mid-1
+        return low
+        
