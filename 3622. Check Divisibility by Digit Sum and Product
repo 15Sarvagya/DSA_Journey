@@ -1,0 +1,11 @@
+class Solution:
+    def checkDivisibility(self, n: int) -> bool:
+        Sum=0
+        prod=1
+        x =n
+        while(x):
+            last = x%10
+            Sum+=last
+            prod*=last
+            x = x//10
+        return n%(Sum+prod) ==0
