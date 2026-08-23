@@ -1,0 +1,7 @@
+class Solution:
+    def isPalindromic(self, s: str) -> bool:
+        binary=""
+        for ch in s:
+            asci_val = ord(ch)
+            binary += format(asci_val,'08b')
+        return binary == binary[::-1]
