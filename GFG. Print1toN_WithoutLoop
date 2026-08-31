@@ -1,0 +1,9 @@
+class Solution:
+    def printTillN(self, n):
+    	 def rec(i):
+    	     if i>n:
+    	         return
+    	     print(i,end=" ")
+    	     rec(i+1)
+    	 return rec(1)
+    	     
