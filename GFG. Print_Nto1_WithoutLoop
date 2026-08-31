@@ -1,0 +1,9 @@
+class Solution:
+    def printNos(self, n):
+        def rec(n):
+            if n==0:
+                return 
+            print(n,end=" ")
+            rec(n-1)
+        return rec(n)
+        
