@@ -1,0 +1,10 @@
+import sys
+sys.setrecursionlimit(2000)
+n = int(input())
+ans=0
+def rec(n,ans):
+    if n==0:
+        return ans
+    ans+=n
+    return rec(n-1,ans)
+print(rec(n,ans))
