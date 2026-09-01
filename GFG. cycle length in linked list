@@ -1,0 +1,23 @@
+''' Structure of Linked List Node
+class Node:
+    def __init__(self, data): 
+        self.data = data
+        self.next = None
+'''
+class Solution:
+    def lengthOfLoop(self, head):
+        
+        count =0
+        slow =head
+        fast = head
+        while(fast!=None and fast.next!=None):
+            fast = fast.next.next
+            slow = slow.next
+            if slow==fast:
+                curr = slow.next
+                count=1
+                while(curr!=fast):
+                    curr = curr.next
+                    count+=1
+                return count
+        return 0
