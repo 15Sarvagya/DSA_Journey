@@ -1,0 +1,25 @@
+''' Structure of Doubly Linked List Node
+class Node:
+	def __init__(self, data):
+		self.data = data
+		self.next = None
+		self.prev = None
+
+'''
+
+class Solution:
+    def insertAtPos(self, head, p, x):
+        curr = head
+        count =0
+        while(curr!=None):
+            if count == p:
+                newNode = Node(x)
+                newNode.next = curr.next
+                newNode.prev = curr
+                if curr.next!=None:
+                    curr.next.prev = newNode
+                curr.next = newNode
+                return head
+            count+=1
+            curr = curr.next
+        return head
