@@ -1,0 +1,16 @@
+class Solution:
+    def uniformArray(self, nums1: list[int]) -> bool:
+        small = min(nums1)
+        n = len(nums1)
+        nums2=[]
+        for i in range(n):
+            if nums1[i]%2==0:
+                    nums2.append(nums1[i])
+            else:
+                nums2.append(nums1[i]-small)
+        first_parity = nums2[0]%2
+        for num in nums2:
+            if first_parity!=num%2:
+                return False
+        return True
+        
