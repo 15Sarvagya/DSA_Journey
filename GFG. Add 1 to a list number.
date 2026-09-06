@@ -1,0 +1,39 @@
+''' structure of linked list Node
+class Node:
+    def __init__(self, data):   # data -> value stored in node
+        self.data = data
+        self.next = None
+'''
+class Solution:
+    def addOne(self,head):
+        def reverse(head):
+            curr = head
+            prev = None
+            nxt = None
+            while(curr!=None):
+                nxt = curr.next
+                curr.next = prev
+                prev = curr
+                curr=nxt
+            return prev
+        head= reverse(head)
+        curr=head
+        carry =1
+        while(curr!=None):
+            curr.data = curr.data+carry
+            if curr.data<10:
+                carry=0
+                break
+            else:
+                carry=1
+                curr.data=0
+            curr=curr.next
+        if carry==1:
+            newNode = Node(1)
+            head = reverse(head)
+            newNode.next=head
+            return newNode
+        return reverse(head)
+        
+                
+            
