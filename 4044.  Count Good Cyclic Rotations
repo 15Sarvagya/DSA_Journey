@@ -1,0 +1,13 @@
+class Solution:
+    def countGoodRotations(self, nums: list[int]) -> int:
+        n = len(nums)
+        count =0
+        x =n//2
+        total = sum(nums)
+        first_sum = sum(nums[:x])
+        for i in range(n):
+            if first_sum > total-first_sum:
+                count+=1
+            first_sum -=nums[i]
+            first_sum+= nums[(i+x)%n]
+        return count
