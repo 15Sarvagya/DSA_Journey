@@ -1,0 +1,9 @@
+class Solution:
+    def findSpecialInteger(self, arr: List[int]) -> int:
+        n = len(arr)
+        hash={}
+        for num in arr:
+            hash[num]= hash.get(num,0)+1
+        for num,count in hash.items():
+            if count>(n//4):
+                return num
