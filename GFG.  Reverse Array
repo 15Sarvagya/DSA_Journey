@@ -1,0 +1,8 @@
+class Solution:
+    def reverseArray(self, arr):
+       def swap(l,r):
+           if l>=r:
+               return arr
+           arr[l],arr[r]=arr[r],arr[l]
+           swap(l+1,r-1)
+       return swap(0,len(arr)-1)
