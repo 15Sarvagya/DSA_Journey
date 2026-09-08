@@ -1,0 +1,23 @@
+# Structure of the doubly linked list Node 
+# class Node:
+#     def __init__(self, x):
+#         self.data = x
+#         self.next = None
+#         self.prev = None
+
+class Solution:
+    def deleteAllOccurOfX(self, head, x):
+        curr=head
+        while(curr!=None):
+            if curr.data==x:
+                if curr.prev:
+                    curr.prev.next=curr.next
+                else:
+                    head=curr.next
+                if curr.next:
+                    curr.next.prev = curr.prev
+            curr=curr.next
+        return head
+                
+                
+        
