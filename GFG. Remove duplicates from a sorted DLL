@@ -1,0 +1,19 @@
+# class Node:
+#     def __init__(self, value):
+#         self.data = value  # value stored in node
+#         self.next = None
+#         self.prev = None
+
+class Solution:
+    def removeDuplicates(self, headRef):
+        curr=headRef
+        while(curr!=None and curr.next!=None):
+            if curr.data==curr.next.data:
+                duplicate=curr.next
+                curr.next=duplicate.next
+                if duplicate.next:
+                    duplicate.next.prev=curr
+            else:
+                curr=curr.next
+        return headRef
+                    
