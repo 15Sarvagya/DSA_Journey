@@ -1,0 +1,38 @@
+# Structure of Doubly Linked List Node
+'''
+class Node:
+    def __init__(self, val):
+        self.data = val
+        self.next = None
+        self.prev = None
+'''
+
+class Solution:
+    def givenSumPairs(self, head, target):
+        # hash={}
+        # ans=[]
+        # curr=head
+        # while(curr!=None):
+        #     comp=target-curr.data
+        #     if comp in hash:
+        #         ans.append([comp,curr.data])
+        #     hash[curr.data]=True
+        #     curr=curr.next
+        # ans.sort()
+        # return ans
+        left = head
+        right=head
+        ans=[]
+        while(right.next!=None):
+            right=right.next
+        while(left.data<right.data):
+            if left.data+right.data==target:
+                ans.append([left.data,right.data])
+                left=left.next
+                right=right.prev
+            elif left.data+right.data<target:
+                left=left.next
+            else:
+                right=right.prev
+        return ans
+            
