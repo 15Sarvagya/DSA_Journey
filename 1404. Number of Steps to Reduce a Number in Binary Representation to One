@@ -1,0 +1,13 @@
+class Solution:
+    def numSteps(self, s: str) -> int:
+        num=int(s,2)
+        def rec(num,count):
+            if num==1:
+                return count
+            if num%2==0:
+                count+=1
+                return rec(num//2,count)
+            else:
+                count+=1
+                return rec(num+1,count)
+        return rec(num,0)
