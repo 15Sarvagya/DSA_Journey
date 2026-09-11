@@ -1,0 +1,14 @@
+class Solution:
+    def numberOfSteps(self, num: int) -> int:
+        def rec(num,count):
+            if num==0:
+                return count
+            if num%2==0:
+                count+=1
+                x = num//2
+                return rec(x,count)
+            else:
+                count+=1
+                x=num-1
+                return rec(x,count)
+        return rec(num,0)
