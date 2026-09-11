@@ -1,0 +1,17 @@
+class Solution:
+    def subsets(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
+        arr=[]
+        ans=[]
+        def rec(idx,arr):
+            if idx>=n:
+                ans.append(arr.copy())
+                return 
+            arr.append(nums[idx])
+            rec(idx+1,arr)
+            arr.pop()
+            rec(idx+1,arr)
+        rec(0,arr)
+        return ans
+
+            
