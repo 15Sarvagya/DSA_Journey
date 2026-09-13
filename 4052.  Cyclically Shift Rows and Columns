@@ -1,0 +1,13 @@
+class Solution:
+    def cyclicShift(self, n: int, grid: list[list[int]], rowShift: list[int], colShift: list[int]) -> list[list[int]]:
+        temp =[[0]*n for _ in range(n)]
+        for i in range(n):
+            for j in range(n):
+                newj=(j-rowShift[i])%n
+                temp[i][newj]=grid[i][j]
+        ans=[[0]*n for _ in range(n)]
+        for i in range(n):
+            for j in range(n):
+                newi=(i-colShift[j])%n
+                ans[newi][j]=temp[i][j]
+        return ans
