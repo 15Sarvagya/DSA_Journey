@@ -1,0 +1,20 @@
+class Solution:
+    def checkSubsequenceSum(self, arr, k):
+        n = len(arr)
+        ds=[]
+        def rec(idx,ds,s):
+            if s>k:
+                return False
+            if idx>=n:
+                return s==k
+            ds.append(arr[idx])
+            s+=arr[idx]
+            if rec(idx+1,ds,s):
+                return True
+            ds.pop()
+            s -=arr[idx]
+            if rec(idx+1,ds,s):
+                return True
+            return False
+        return rec(0,ds,0)
+                
