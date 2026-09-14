@@ -1,0 +1,20 @@
+class Solution:
+    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+        n = len(candidates)
+        arr=[]
+        ans=[]
+        def rec(idx,total):
+            if total==target:
+                if arr not in ans:
+                    ans.append(arr.copy())
+                return 
+            if total>target or idx >= n:
+                return 
+            arr.append(candidates[idx])
+            total+=candidates[idx]
+            rec(idx,total)
+            arr.pop()
+            total-=candidates[idx]
+            rec(idx+1,total)
+        rec(0,0)
+        return ans
