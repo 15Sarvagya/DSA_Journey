@@ -1,0 +1,16 @@
+class Solution:
+    def combine(self, n: int, k: int) -> List[List[int]]:
+        arr=[]
+        ans=[]
+        def rec(idx,arr):
+            if len(arr)==k:
+                ans.append(arr.copy())
+                return 
+            if idx>n:
+                return
+            arr.append(idx)
+            rec(idx+1,arr)
+            arr.pop()
+            rec(idx+1,arr)
+        rec(1,arr)
+        return ans
