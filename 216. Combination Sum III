@@ -1,0 +1,20 @@
+class Solution:
+    def combinationSum3(self, k: int, n: int) -> list[list[int]]:
+        arr=[1,2,3,4,5,6,7,8,9]
+        arr1=[]
+        ans=[]
+        def rec(idx,total,arr1):
+            if total==n and len(arr1)==k:
+                if arr1 not in ans:
+                    ans.append(arr1.copy())
+            if idx>=9 or total>n:
+                return 
+            arr1.append(arr[idx])
+            total +=arr[idx]
+            rec(idx+1,total,arr1)
+            arr1.pop()
+            total-=arr[idx]
+            rec(idx+1,total,arr1)
+        rec(0,0,arr1)
+        return ans
+        
