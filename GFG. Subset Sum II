@@ -1,0 +1,17 @@
+class Solution:
+    def findSubsets(self, arr):
+        arr.sort()
+        n = len(arr)
+        ds=[]
+        ans=[]
+        def rec(idx,ds):
+            ans.append(ds.copy())
+            for i in range(idx,n):
+                if i!=idx and arr[i]==arr[i-1]:
+                    continue
+                ds.append(arr[i])
+                rec(i+1,ds)
+                ds.pop()
+        rec(0,ds)
+        return ans
+                
