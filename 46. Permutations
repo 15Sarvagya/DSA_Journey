@@ -1,0 +1,17 @@
+class Solution:
+    def permute(self, nums: list[int]) -> list[list[int]]:
+        ans=[]
+        arr=[]
+        freq= [0]*len(nums)
+        def rec(arr,freq):
+            if len(arr)==len(nums):
+                ans.append(arr.copy())
+            for i in range(len(nums)):
+                if freq[i]==0:
+                    arr.append(nums[i])
+                    freq[i]=1
+                    rec(arr,freq)
+                    freq[i]=0
+                    arr.pop()
+        rec(arr,freq)
+        return ans
