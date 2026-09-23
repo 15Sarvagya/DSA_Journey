@@ -1,0 +1,16 @@
+class Solution:
+    def partition(self, s: str) -> list[list[str]]:
+        arr=[]
+        ans=[]
+        def ispalindrome(s):
+            return s==s[::-1]
+        def rec(idx,arr):
+            if idx==len(s):
+                ans.append(arr.copy())
+            for i in range(idx,len(s)):
+                if ispalindrome(s[idx:i+1]):
+                    arr.append(s[idx:i+1])
+                    rec(i+1,arr)
+                    arr.pop()
+        rec(0,arr)
+        return ans
