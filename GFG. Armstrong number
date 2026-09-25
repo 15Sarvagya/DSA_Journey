@@ -1,0 +1,11 @@
+class Solution:
+    def armstrongNumber (self, n):
+        # code here 
+        count=len(str(n))
+        x=n
+        Sum=0
+        while(x):
+            last=x%10
+            Sum+=last**count
+            x=x//10
+        return Sum==n
