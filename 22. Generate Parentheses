@@ -1,0 +1,13 @@
+class Solution:
+    def generateParenthesis(self, n: int) -> list[str]:
+        ans=[]
+        def rec(s,open,close):
+            if open==n and close==n:
+                ans.append(s)
+                return
+            if open<n:
+                rec(s+"(",open+1,close)
+            if close<open:
+                rec(s+")",open,close+1)
+        rec("",0,0)
+        return ans
