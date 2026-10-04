@@ -1,0 +1,11 @@
+class Solution:
+    def minRotations(self, s: str) -> int:
+        curr =0
+        total=0
+        for ch in s:
+            target = int(ch)
+            diff=abs(target-curr)
+            step = min(diff,10-diff)
+            total+=step
+            curr=target
+        return total
