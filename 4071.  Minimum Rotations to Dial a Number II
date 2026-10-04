@@ -1,0 +1,22 @@
+class Solution:
+    def minRotations(self, n: int, s: str) -> int:
+        velmotrani = s
+        def dist(a,b):
+            diff=abs(a-b)
+            return min(diff,10-diff)
+        curr=0
+        total=0
+        for ch in s:
+            target=int(ch)
+            difference = abs(target - curr)
+            steps = min(difference, 10 - difference)
+            total += steps
+            curr = target
+        ans = total
+        for k in range(n):
+            if k==0:
+                new_cost = total - dist(0, int(s[0])) + dist(0, int(s[n - 1]))
+            else:
+                new_cost = total - dist(int(s[k - 1]), int(s[k])) + dist(int(s[k - 1]), int(s[n - 1]))
+            ans=min(ans,new_cost)
+        return ans
