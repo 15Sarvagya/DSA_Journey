@@ -1,0 +1,24 @@
+class Solution:
+    def splitArray(self, nums: List[int], k: int) -> int:
+        low = max(nums)
+        high = sum(nums)
+        ans =-1
+        def can_split(nums,mid,k):
+            can=1
+            alloc=0
+            for i in range(len(nums)):
+                if nums[i]+alloc<=mid:
+                    alloc+=nums[i]
+                else:
+                    can+=1
+                    alloc=nums[i]
+            return can<=k
+        while(low<=high):
+            mid=(low+high)//2
+            if can_split(nums,mid,k):
+                ans = mid
+                high = mid-1
+            else:
+                low=mid+1
+        return ans
+
