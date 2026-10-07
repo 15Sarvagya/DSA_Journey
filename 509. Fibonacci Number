@@ -19,5 +19,47 @@ class Solution:
                 return dp[n]
             dp[n] = rec(n-1,dp)+rec(n-2,dp)
             return dp[n]
-        return rec(n,dp) #Dynamic Programming
-            
+        return rec(n,dp) # Recursive Dynamic Programming
+
+
+
+
+class Solution:
+    def fib(self, n: int) -> int:
+        dp=[0]*(n+1)
+        if n<=1:
+            return n
+        dp[0]=0
+        dp[1]=1
+        for i in range(2,n+1):
+            dp[i]=dp[i-1]+dp[i-2]
+        return dp[n] #Tabularization dynamic programming method 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Solution:
+    def fib(self, n: int) -> int:
+        if n<=1:
+            return n
+        prev2=0
+        prev=1
+        for curr in range(2,n+1):
+            curr = prev+prev2
+            prev2=prev
+            prev=curr     
+        return curr #Tabularization without using extra space 
