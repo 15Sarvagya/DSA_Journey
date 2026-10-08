@@ -1,0 +1,46 @@
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        def rec(idx):
+            if idx== 0 or idx==1:
+                return 1
+            left= rec(idx-1)
+            right=rec(idx-2)
+            return left+right
+        return rec(n) #It is a recursive way without using dynamic programming, just using recursion. We got a time limit exceeded (TLE). 
+
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        dp= [-1]*(n+1)
+        def rec(n):
+            if n<=1:
+                return 1
+            if dp[n]!=-1:
+                return dp[n]
+            dp[n]=rec(n-1)+rec(n-2)
+            return dp[n]
+        return rec(n) #It is a memoization technique in dynamic programming where I'm using a DP of size n + 1, assigning values of -1, then recursively calling it. It is a top-down approach. Starting from the value of n 
+
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        dp= [-1]*(n+1)
+        dp[0]=1
+        dp[1]=1
+        for i in range(2,n+1):
+            dp[i]=dp[i-1]+dp[i-2]
+        return dp[n]
+        #It is a tabularization technique in dynamic programming where I'm using DP, but it is a bottom-up approach where I'm starting from the base cases. 
+
+
+class Solution:
+    def climbStairs(self, n: int) -> int:
+        if n<=1:
+            return 1
+        prev2=1
+        prev=1
+        for curr in range(2,n+1):
+            curr=prev+prev2
+            prev2=prev
+            prev=curr
+        return curr #Optimize space using tabularization. 
