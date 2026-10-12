@@ -1,0 +1,21 @@
+class Solution:
+    def HouseRob(self,arr):
+            prev2=0
+            prev=arr[0]
+            for i in range(1,len(arr)):
+                pick = arr[i]+prev2
+                not_pick=prev
+                curr = max(pick,not_pick)
+                prev2=prev
+                prev=curr
+            return prev
+
+    def rob(self, nums: list[int]) -> int:
+        n = len(nums)
+        if n == 1:
+            return nums[0]
+        arr1=nums[1:]
+        arr2=nums[:-1]
+        return max(self.HouseRob(arr1),self.HouseRob(arr2))#Just modified my HouseRobber 1 by first not taking the first index and, in the second, not taking the last index. Just use common sense. 
+
+        
