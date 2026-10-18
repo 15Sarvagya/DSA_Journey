@@ -1,0 +1,85 @@
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: list[list[int]]) -> int:
+        def rec(i,j):
+            if i<0 or j<0:
+                return 0
+            if obstacleGrid[i][j]==1:
+                return 0
+            if i==0 and j==0:
+                return 1
+            
+            up = rec(i-1,j)
+            left = rec(i,j-1)
+            return up + left
+        n = len(obstacleGrid)
+        m = len(obstacleGrid[0])
+        return rec(n-1,m-1)#Recursive approach giving time limit exceeded (TLE) 
+
+
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: list[list[int]]) -> int:
+        n = len(obstacleGrid)
+        m = len(obstacleGrid[0])
+        dp =[[-1]*m for _ in range(n)] 
+        def rec(i,j):
+            if i<0 or j<0:
+                return 0
+            if obstacleGrid[i][j]==1:
+                return 0
+            if i==0 and j==0:
+                return 1
+            if dp[i][j]!=-1:
+                return dp[i][j]
+            up = rec(i-1,j)
+            left = rec(i,j-1)
+            dp[i][j]= up + left
+            return dp[i][j]
+        return rec(n-1,m-1)# Memoization approach, dynamic programming 
+
+
+
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: list[list[int]]) -> int:
+        n = len(obstacleGrid)
+        m = len(obstacleGrid[0])
+        dp =[[-1]*m for _ in range(n)] 
+        if obstacleGrid[0][0]==1:
+            return 0
+        dp[0][0]=1
+        for i in range(n):
+            for j in range(m):
+                up=0
+                left=0
+                if i==0 and j==0:
+                    continue
+                if obstacleGrid[i][j]==1:
+                    dp[i][j]=0
+                    continue
+                if i>0:
+                    up = dp[i-1][j]
+                if j>0:
+                    left = dp[i][j-1]
+                dp[i][j]=left+up
+        return dp[n-1][m-1]#Tabularization approach: dynamic programming by initializing my base case before the loop 
+
+class Solution:
+    def uniquePathsWithObstacles(self, obstacleGrid: list[list[int]]) -> int:
+        n = len(obstacleGrid)
+        m = len(obstacleGrid[0])
+        dp =[[-1]*m for _ in range(n)] 
+        for i in range(n):
+            for j in range(m):
+                up=0
+                left=0
+                if obstacleGrid[i][j]==1:
+                    dp[i][j]=0
+                    continue
+                if i==0 and j==0:
+                    dp[i][j]=1
+                    continue             
+                if i>0:
+                    up = dp[i-1][j]
+                if j>0:
+                    left = dp[i][j-1]
+                dp[i][j]=left+up
+        return dp[n-1][m-1]#Approach dynamic programming by:not initializing my base case before the loop initializing my base case within the loop
