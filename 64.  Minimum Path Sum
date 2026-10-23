@@ -1,0 +1,53 @@
+class Solution:
+    def minPathSum(self, matrix: list[list[int]]) -> int:
+        n = len(matrix)
+        m = len(matrix[0])
+        def rec(i,j):
+            if i==0 and j==0:
+                return matrix[i][j]
+            if i<0 or j<0:
+                return float("inf")
+            up = matrix[i][j]+rec(i-1,j)
+            left = matrix[i][j]+rec(i,j-1)
+            return min(up,left)
+        return rec(n-1,m-1) #Recursive approach gives Time Limit Exceeded (TLE). 
+
+
+class Solution:
+    def minPathSum(self, matrix: list[list[int]]) -> int:
+        n = len(matrix)
+        m = len(matrix[0])
+        dp = [[-1]*m for _ in range(n)]
+        def rec(i,j):
+            if i==0 and j==0:
+                return matrix[i][j]
+            if i<0 or j<0:
+                return float("inf")
+            if dp[i][j]!=-1:
+                return dp[i][j]
+            up = matrix[i][j]+rec(i-1,j)
+            left = matrix[i][j]+rec(i,j-1)
+            dp[i][j]= min(up,left)
+            return dp[i][j]
+        return rec(n-1,m-1) # Memoization technique in dynamic programming 
+
+
+class Solution:
+    def minPathSum(self, matrix: list[list[int]]) -> int:
+        n = len(matrix)
+        m = len(matrix[0])
+        dp = [[-1]*m for _ in range(n)]
+        dp[0][0]=matrix[0][0]
+        for i in range(n):
+            for j in range(m):
+                if i==0 and j==0:
+                    dp[i][j]= matrix[i][j]
+                else:
+                    up=float("inf")
+                    left = float("inf")
+                    if i>0:
+                        up = matrix[i][j] + dp[i-1][j]
+                    if j>0:
+                        left = matrix[i][j] + dp[i][j-1]
+                    dp[i][j]= min(up,left)
+        return dp[n-1][m-1]#Tableauization technique: dynamic programming 
