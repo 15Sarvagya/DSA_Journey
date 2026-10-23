@@ -1,0 +1,55 @@
+class Solution:
+    def minFallingPathSum(self, matrix: list[list[int]]) -> int:
+        n = len(matrix)
+        m = len(matrix[0])
+        def rec(i,j):
+            if j<0 or j>=m:
+                return float("inf")
+            if i==0 :
+                return matrix[i][j]
+            up = matrix[i][j]+rec(i-1,j)
+            left = matrix[i][j]+rec(i-1,j-1)
+            right = matrix[i][j]+rec(i-1,j+1)
+            return min(up,left,right)
+        return min(rec(n - 1, j) for j in range(m))#Recursive way approach, giving time complexity clearly 
+
+
+class Solution:
+    def minFallingPathSum(self, matrix: list[list[int]]) -> int:
+        n = len(matrix)
+        m = len(matrix[0])
+        dp=[[-1]*m for _ in range(n)]
+        def rec(i,j):
+            if j<0 or j>=m:
+                return float("inf")
+            if i==0 :
+                return matrix[i][j]
+            if dp[i][j]!=-1:
+                return dp[i][j]
+            up = matrix[i][j]+rec(i-1,j)
+            left = matrix[i][j]+rec(i-1,j-1)
+            right = matrix[i][j]+rec(i-1,j+1)
+            dp[i][j]= min(up,left,right)
+            return dp[i][j]
+        return min(rec(n - 1, j) for j in range(m))#Memoization technique giving time limit exceeded (TLE) 
+
+
+
+class Solution:
+    def minFallingPathSum(self, matrix: list[list[int]]) -> int:
+        n = len(matrix)
+        m = len(matrix[0])
+        dp=[[-1]*m for _ in range(n)]
+        for j in range(m):
+            dp[0][j]= matrix[0][j]
+        for i in range(1,n):
+            for j in range(m):
+                up=matrix[i][j]+dp[i-1][j]
+                left=float('inf')
+                right = float('inf')
+                if j>0:
+                    left = matrix[i][j]+dp[i-1][j-1]
+                if j<m-1:
+                    right = matrix[i][j]+dp[i-1][j+1]
+                dp[i][j]=min(up,left,right)
+        return min(dp[n-1])#Tabularization technique: dynamic programming 
