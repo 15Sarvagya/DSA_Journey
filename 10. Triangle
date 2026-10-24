@@ -1,0 +1,63 @@
+class Solution:
+    def minimumTotal(self, triangle: list[list[int]]) -> int:
+        n = len(triangle)
+        def rec(i,j):
+            if i==n-1:
+                return triangle[i][j]
+            down = triangle[i][j]+rec(i+1,j)
+            dig = triangle[i][j]+rec(i+1,j+1)
+            return min(down,dig)
+        return rec(0,0)# Recursive approach giving Time Limit Exceeded, clearly 
+        one thing to notice is that, in the recursive approach while we were solving Unique Paths and other questions, we were starting from n - 1 and m - 1, but here we are starting from 0, 0. 
+
+
+        class Solution:
+    def minimumTotal(self, triangle: list[list[int]]) -> int:
+        n = len(triangle)
+        m = len(triangle[n-1])
+        dp= [[-1]*m for _ in range(n)]
+        def rec(i,j):
+            if i==n-1:
+                return triangle[i][j]
+            if dp[i][j]!=-1:
+                return dp[i][j]
+
+            down = triangle[i][j]+rec(i+1,j)
+            dig = triangle[i][j]+rec(i+1,j+1)
+            dp[i][j]= min(down,dig) 
+            return dp[i][j]
+        return rec(0,0)#This was my memoization code. It was still giving me TLE because of extra size of DP. I don't know how it's happened. I asked ChatGPT. It gave me the memoization approach for creating the DP size only for the triangles by taking `None` in place of `-1`. Because it may happen that some of the minimums may take -1 as their number, but they are not good to store. That's why they are taking `None`, no number, just `None`. 
+
+
+
+        class Solution:
+    def minimumTotal(self, triangle: list[list[int]]) -> int:
+        n = len(triangle)
+        m = len(triangle[n-1])
+        dp = [[None] * len(row) for row in triangle]
+        def rec(i,j):
+            if i==n-1:
+                return triangle[i][j]
+            if dp[i][j] is not None:
+                return dp[i][j]
+
+            down = triangle[i][j]+rec(i+1,j)
+            dig = triangle[i][j]+rec(i+1,j+1)
+            dp[i][j]= min(down,dig)
+            return dp[i][j]
+        return rec(0,0)#Memoization technique by optimizing the DP size 
+
+
+        class Solution:
+    def minimumTotal(self, triangle: list[list[int]]) -> int:
+        n = len(triangle)
+        m = len(triangle[n-1])
+        dp=[[-1]*m for _ in range(n)]
+        for i in range(n):
+            dp[n-1][i] = triangle[n-1][i]
+        for i in range(n-2,-1,-1):
+            for j in range(len(triangle[i])):
+                down= triangle[i][j]+ dp[i+1][j]
+                dig = triangle[i][j]+ dp[i+1][j+1]
+                dp[i][j]= min(down,dig)
+        return dp[0][0] tabularization technique: dynamic programming 
