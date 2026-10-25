@@ -1,0 +1,12 @@
+class Solution:
+    def countSubarrays(self, nums: list[int], minK: int, maxK: int) -> int:
+        count=0
+        length =0
+        for num in nums:
+                if minK<=num<=maxK:
+                    length+=1
+                    count+=length
+                else:
+                    length =0
+        return count
+                
