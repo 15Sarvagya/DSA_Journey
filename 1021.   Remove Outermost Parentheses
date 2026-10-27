@@ -11,5 +11,4 @@ class Solution:
                 balance-=1
                 if balance > 0:
                     ans += ch
-
         return ans
