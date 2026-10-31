@@ -1,0 +1,48 @@
+class Solution:
+    def uniquePaths(self, grid: list[list[int]]) -> int:
+
+        m = len(grid)
+        n = len(grid[0])
+        mod = 10**9 + 7
+
+        def move(i, j, d):
+
+            while i < m and j < n:
+
+                if grid[i][j] == 0:
+                    return i, j
+
+                if d == 0:
+                    i += 1
+                else:
+                    j += 1
+
+                d = 1-d
+
+            return -1, -1
+
+        def rec(i, j):
+
+            if i >= m or j >= n:
+                return 0
+
+            if i == m-1 and j == n-1:
+                return 1
+
+            # Right
+            x, y = move(i, j+1, 0)
+            right = 0
+
+            if x != -1:
+                right = rec(x, y)
+
+            # Down
+            x, y = move(i+1, j, 1)
+            down = 0
+
+            if x != -1:
+                down = rec(x, y)
+
+            return (right + down) % mod
+
+        return rec(0, 0)
