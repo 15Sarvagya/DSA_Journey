@@ -1,0 +1,48 @@
+class Solution:
+    def cherryPickup(self, grid: list[list[int]]) -> int:
+        n = len(grid)
+        m = len(grid[0])
+        def rec(i,j1,j2):
+            if j1<0 or j1>=m or j2<0 or j2>=m:
+                return float('-inf')
+            if i==n-1:
+                if j1==j2:
+                    return grid[i][j1]
+                else:
+                    return grid[i][j1] + grid[i][j2]
+            best = float("-inf")
+            for d1 in (-1,0,1):
+                for d2 in (-1,0,1):
+                    if j1==j2:
+                            best = max(best,grid[i][j1]+rec(i+1,j1+d1,j2+d2))
+                    else:
+                        best = max(best,grid[i][j1]+grid[i][j2]+rec(i+1,j1+d1,j2+d2))
+            return best
+        return rec(0,0,m-1)#Recursive approach given: time limit exceeded (TLE) 
+
+
+class Solution:
+    def cherryPickup(self, grid: list[list[int]]) -> int:
+        n = len(grid)
+        m = len(grid[0])
+        dp = [[[-1]*m for _ in range(m)] for _ in range(n)]
+        def rec(i,j1,j2):
+            if j1<0 or j1>=m or j2<0 or j2>=m:
+                return float('-inf')
+            if i==n-1:
+                if j1==j2:
+                    return grid[i][j1]
+                else:
+                    return grid[i][j1] + grid[i][j2]
+            if dp[i][j1][j2]!=-1:
+                return dp[i][j1][j2]
+            best = float("-inf")
+            for d1 in (-1,0,1):
+                for d2 in (-1,0,1):
+                    if j1==j2:
+                            best = max(best,grid[i][j1]+rec(i+1,j1+d1,j2+d2))
+                    else:
+                        best = max(best,grid[i][j1]+grid[i][j2]+rec(i+1,j1+d1,j2+d2))
+                    dp[i][j1][j2]=best
+            return dp[i][j1][j2]
+        return rec(0,0,m-1)#Memoization technique 
