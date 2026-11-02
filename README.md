@@ -35,16 +35,6 @@ This repository contains my daily Data Structures and Algorithms practice for pl
 
 ---
 
-## 📅 Practice Strategy
-
-- Solve 1–3 problems daily
-- Focus on understanding approach
-- Write clean and optimized code
-- Mention Time & Space Complexity
-- Revise every weekend
-
----
-
 ## 🧠 Problem Format
 
 Each solution includes:
