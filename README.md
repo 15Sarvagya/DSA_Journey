@@ -38,50 +38,8 @@ I believe in learning by solving problems, understanding different approaches, a
 **Coding Platforms:**
 
 - [LeetCode](https://leetcode.com/u/Sarvagya_15/)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/)
-- [Coding Ninjas / CodeStudio](https://www.naukri.com/code360/)
-
----
-
-## 📚 Topics Covered
-
-| Topic | Status |
-|---|---|
-| Arrays | ✅ Practicing |
-| Strings | ✅ Practicing |
-| Linked Lists | ✅ Practicing |
-| Stack & Queue | ✅ Practicing |
-| Recursion & Backtracking | ✅ Practicing |
-| Binary Search | ✅ Practicing |
-| Trees & Binary Search Trees | ✅ Practicing |
-| Heaps & Priority Queues | ✅ Practicing |
-| Graphs | ✅ Practicing |
-| Dynamic Programming | ✅ Practicing |
-| Greedy Algorithms | 📚 Revising |
-| Bit Manipulation | 📚 Revising |
-
----
-
-## 📂 Repository Structure
-
-```text
-DSA_Journey/
-│
-├── Arrays/
-├── Strings/
-├── Linked_List/
-├── Stack_Queue/
-├── Recursion_Backtracking/
-├── Binary_Search/
-├── Trees/
-├── Heap/
-├── Graphs/
-├── Dynamic_Programming/
-├── Greedy/
-└── Bit_Manipulation/
-```
-
-*Solutions are organized topic-wise to make revision and navigation easier.*
+- [GeeksforGeeks](https://www.geeksforgeeks.org/profile/sarvagya4302)
+- [Coding Ninjas / CodeStudio]([https://www.naukri.com/code360/](https://www.naukri.com/code360/profile/413193ee-321f-447f-8c6b-cef6708f3829))
 
 ---
 
@@ -90,38 +48,4 @@ DSA_Journey/
 For every problem, I aim to understand and document:
 
 1. **Problem Statement** – Understand the requirements and constraints.
-2. **Approach** – Develop a logical solution.
-3. **Code** – Implement the solution in Python.
-4. **Time Complexity** – Analyze execution time.
-5. **Space Complexity** – Analyze extra memory usage.
-6. **Optimization** – Explore better approaches whenever possible.
-
-I also keep track of attempted problems, including mistakes and improvements, because learning from failed attempts is part of the process.
-
----
-
-## 📈 Progress & Consistency
-
-This repository is continuously updated as I solve new problems and revisit previously learned concepts.
-
-- Daily coding practice
-- Topic-wise problem solving
-- Regular revision
-- Optimization of previous solutions
-
----
-
-## 🔗 Connect With Me
-
-- **GitHub:** [15Sarvagya](https://github.com/15Sarvagya)
-- **LeetCode:** [Sarvagya_15](https://leetcode.com/u/Sarvagya_15/)
-
----
-
-<p align="center">
-  <b>One problem at a time. One day at a time. 🚀</b>
-</p>
-
-<p align="center">
-  <i>"योगः कर्मसु कौशलम्" — Excellence in action is yoga.</i>
-</p>
+2. **Approach** – Develop a
