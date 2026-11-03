@@ -35,13 +35,22 @@ I believe in learning by solving problems, understanding different approaches, a
 
 **Primary Language:** Python
 
-**Coding Platforms:**
+## 🌐 Coding Profiles
 
-- [LeetCode](https://leetcode.com/u/Sarvagya_15/)
-- [GeeksforGeeks](https://www.geeksforgeeks.org/profile/sarvagya4302)
-- [Coding Ninjas / CodeStudio]((https://www.naukri.com/code360/profile/413193ee-321f-447f-8c6b-cef6708f3829))
+<p align="center">
+  <a href="https://leetcode.com/u/Sarvagya_15/" target="_blank">
+    <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/>
+  </a>
 
----
+  <a href="https://www.geeksforgeeks.org/" target="_blank">
+    <img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"/>
+  </a>
+
+  <a href="https://github.com/15Sarvagya" target="_blank">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"/>
+  </a>
+</p>
+
 
 ## 🧠 My Problem-Solving Approach
 
