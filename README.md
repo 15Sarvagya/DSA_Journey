@@ -42,7 +42,7 @@ I believe in learning by solving problems, understanding different approaches, a
     <img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode"/>
   </a>
 
-  <a href="https://www.geeksforgeeks.org/" target="_blank">
+  <a href="https://www.geeksforgeeks.org/profile/sarvagya4302" target="_blank">
     <img src="https://img.shields.io/badge/GeeksforGeeks-2F8D46?style=for-the-badge&logo=geeksforgeeks&logoColor=white" alt="GeeksforGeeks"/>
   </a>
 
