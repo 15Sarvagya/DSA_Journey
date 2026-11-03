@@ -39,13 +39,50 @@ I believe in learning by solving problems, understanding different approaches, a
 
 - [LeetCode](https://leetcode.com/u/Sarvagya_15/)
 - [GeeksforGeeks](https://www.geeksforgeeks.org/profile/sarvagya4302)
-- [Coding Ninjas / CodeStudio]([https://www.naukri.com/code360/](https://www.naukri.com/code360/profile/413193ee-321f-447f-8c6b-cef6708f3829))
+- [Coding Ninjas / CodeStudio](https://www.naukri.com/code360/](https://www.naukri.com/code360/profile/413193ee-321f-447f-8c6b-cef6708f3829))
 
 ---
 
-## 🧠 My Problem-Solving Approach
+🧠 My Problem-Solving Approach
 
 For every problem, I aim to understand and document:
 
-1. **Problem Statement** – Understand the requirements and constraints.
-2. **Approach** – Develop a
+Problem Statement – Understand the requirements and constraints.
+
+Approach – Develop a logical solution.
+
+Code – Implement the solution in Python.
+
+Time Complexity – Analyze execution time.
+
+Space Complexity – Analyze extra memory usage.
+
+Optimization – Explore better approaches whenever possible.
+
+I also keep track of attempted problems, including mistakes and improvements, because learning from failed attempts is part of the process.
+
+📈 Progress & Consistency
+
+This repository is continuously updated as I solve new problems and revisit previously learned concepts.
+
+Daily coding practice
+
+Topic-wise problem solving
+
+Regular revision
+
+Optimization of previous solutions
+
+🔗 Connect With Me
+
+GitHub: 15Sarvagya
+
+LeetCode: Sarvagya_15
+
+<p align="center">
+  <b>One problem at a time. One day at a time. 🚀</b>
+</p>
+
+<p align="center">
+  <i>"योगः कर्मसु कौशलम्" — Excellence in action is yoga.</i>
+</p>
