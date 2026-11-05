@@ -1,0 +1,10 @@
+class Solution:
+    def minMergedInteger(self, nums: list[int]) -> int:
+        org=0
+        mini=float("inf")
+        for i in range(0,len(nums),2):
+            org=nums[i]
+            x=len(str(nums[i+1]))
+            org=org*(10**x)+nums[i+1]
+            mini=min(org,mini)
+        return mini
