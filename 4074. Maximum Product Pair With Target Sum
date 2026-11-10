@@ -1,0 +1,21 @@
+
+class Solution:
+    def maxProductPair(self, nums: list[int], target: int) -> list[int]:
+
+        arr1 = []
+
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                if i != j and nums[i] + nums[j] == target and nums[i] > nums[j]:
+                    arr1.append([i, j])
+
+        if not arr1:
+            return [-1, -1]
+
+        ans = arr1[0]
+
+        for i, j in arr1:
+            if nums[i] * nums[j] > nums[ans[0]] * nums[ans[1]]:
+                ans = [i, j]
+
+        return ans
