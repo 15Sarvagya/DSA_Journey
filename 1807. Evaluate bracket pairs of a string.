@@ -17,4 +17,5 @@ class Solution:
             else:
                 ans.append(s[i])
                 i+=1
+
         return "".join(ans)   
