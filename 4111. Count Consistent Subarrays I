@@ -1,0 +1,13 @@
+class Solution:
+    def countConsistent(self, nums: list[int]) -> int:
+        count =0 
+        for i in range(len(nums)):
+            mini = nums[i]
+            ans = nums[i]
+            for j in range(i,len(nums)):
+                mini = min(mini,nums[j])
+                ans &= nums[j]
+                if ans == mini:
+                    count+=1
+                           
+        return count
