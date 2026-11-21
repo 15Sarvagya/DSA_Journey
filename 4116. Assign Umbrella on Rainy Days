@@ -1,0 +1,24 @@
+class Solution:
+    def assignUmbrella(self, rain: list[int]) -> list[str]:
+        ans =[]
+        Al=0
+        Bl=0
+        for i in range(len(rain)):
+            if rain[i]==0:
+                ans.append('None')
+            elif i<len(rain)-1 and rain[i] == rain[i+1]==1:
+                if Al==Bl:
+                    ans.append('Alice')
+                    Al+=1
+                elif (Al>Bl):
+                    ans.append('Bob')
+                    Bl+=1
+                else:
+                    ans.append('Alice')
+                    Al+=1
+            else:
+                ans.append('Bob')
+                Bl+=1
+        return ans
+                
+        
