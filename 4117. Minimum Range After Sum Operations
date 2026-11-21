@@ -1,0 +1,17 @@
+class Solution:
+    def minRange(self, a: int, b: int, c: int) -> int:
+        range=max(a,b,c)-min(a,b,c)
+        def funct(a,b,c,range):
+            maxi=max(a,b,c)
+            if maxi ==a:
+                a=b+c
+            elif maxi==b:
+                b=a+c
+            else:
+                c=a+b
+            if range<=max(a,b,c)-min(a,b,c):
+                return range
+            else:
+                range=max(a,b,c)-min(a,b,c)
+                return funct(a,b,c,range)
+        return funct(a,b,c,range)
